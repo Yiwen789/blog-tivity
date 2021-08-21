@@ -22,18 +22,32 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 class Header extends Component {
   getListArea() {
-    if (this.props.focused) {
-      <SearchInfo>
+    const { focused, list, page, totalPage, mouseIn, handleMouseEnter, handleMouseLeave } = this.props;
+    const jsList = list.toJS();
+    const pageList = [];
+
+    if (jsList.length) {
+      for (let i = page * 10; i < page * 10; i++) {
+        pageList.push(
+          <SearchInfoItem key={item}>{jsList[i]}</SearchInfoItem>
+        )
+      }
+    }
+
+    if (focused || mouseIn) {
+      <SearchInfo
+        onMouseEnter={handleMouseEnter}
+        oonMouseLeave={handleMouseLeave}
+      >
         <SearchInfoTitle>
           Trending
-          <SearchInfoSwitch>Swtich</SearchInfoSwitch>
+          <SearchInfoSwitch onClick={() => handleChangePage(page, totalPage, this.spinIcon)}>
+            <FontAwesomeIcon ref={(icon) => { this.spinIncon = icon }} icon={faTimes} className='iconfont spin' />
+            Swtich
+          </SearchInfoSwitch>
         </SearchInfoTitle>
         <SearchInfoList>
-          {
-            this.props.list.map((item) => {
-              return <SearchInfoItem key={item}>{item}</SearchInfoItem>
-            })
-          }
+          {pageList}
         </SearchInfoList>
       </SearchInfo>
     } else {
@@ -41,6 +55,7 @@ class Header extends Component {
     }
   }
   render() {
+    const { focused, handleInputFocus, handleInputBlur, handleMouseEnter } = this.props;
     return (
       <HeaderWrapper>
         <Logo />
@@ -51,17 +66,17 @@ class Header extends Component {
           <NavItem className='right '>Aa</NavItem>
           <SearchWrapper>
             <CSSTransition
-              in={this.props.focused}
+              in={focused}
               timeout={200}
               classNames='slide'
             >
               <NavSearch
-                className={this.props.focused ? 'focused' : ''}
-                onFocus={this.props.handleInputFocus}
-                onBlur={this.props.handleInputBlur}></NavSearch>
+                className={focused ? 'focused' : ''}
+                onFocus={handleInputFocus}
+                onBlur={handleInputBlur}></NavSearch>
             </CSSTransition>
-            <FontAwesomeIcon icon={faTimes} className={this.props.focused ? 'focused iconfont' : 'iconfont'} />
-            {this.getListArea(this.props.focused)}
+            <FontAwesomeIcon icon={faTimes} className={focused ? 'focused iconfont zoom' : 'iconfont zoom'} />
+            {this.getListArea(focused)}
           </SearchWrapper>
         </Nav>
         <Addition>
@@ -80,7 +95,10 @@ class Header extends Component {
 const mapStateToProps = (state) => {
   return {
     focused: state.getIn(['header', 'focused']),
-    list: state.getIn(['header', 'list'])
+    list: state.getIn(['header', 'list']),
+    page: state.getIn(['header', 'page']),
+    totalPage: state.getIn(['header', 'totalPage']),
+    mouseIn: state.getIn(['header', 'mouseIn'])
   }
 }
 
@@ -93,6 +111,31 @@ const mapDispatchToProps = (dispatch) => {
     },
     handleInputBlur() {
       dispactch(actionCreators.searchBlur());
+    },
+    handleMouseEnter() {
+      diapatch(actionCreators.mouseEnter());
+    },
+    handleMouseLeave() {
+      dispatch(actionCreators.mouseLeave());
+    },
+    handleChangePage() {
+      dispatch(actionCreators.changePage());
+    },
+    handleChangePage(page, totalPage, spin) {
+      let originAngle = spin.style.transform.replace(/[^0--9]/ig, ''); //非数字都替换为空
+      if (originAngle) {
+        originAngle: parseInt(originAngle, 10);
+      } else {
+        originAngle = 0;
+      }
+      spin.style.transform = 'rotate(' + originAngle + '360)';
+
+      if (page < totalPage) {
+        dispatch(actionCreators.changePage(page + 1));
+      } else {
+        dispatch(actionCreators.changePage(1));
+      }
+      console.log(page, totalPage);
     }
   }
 }
