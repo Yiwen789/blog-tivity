@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
+import { actionCreators } from './store';
 import {
   HeaderWrapper,
   Logo,
@@ -8,6 +9,7 @@ import {
   NavItem,
   NavSearch,
   SearchWrapper,
+  SearchInfo,
   Addition,
   Button
 } from './style';
@@ -35,6 +37,7 @@ const Header = (props) => {
               onBlur={props.handleInputBlur}></NavSearch>
           </CSSTransition>
           <FontAwesomeIcon icon={faTimes} className={props.focused ? 'focused iconfont' : 'iconfont'} />
+          <SearchInfo></SearchInfo>
         </SearchWrapper>
       </Nav>
       <Addition>
@@ -52,22 +55,18 @@ const Header = (props) => {
 //把store里的state映射到组件的props中
 const mapStateToProps = (state) => {
   return {
-    focused: state.focused
+    focused: state.getIn(['header', 'focused'])
   }
 }
 
+//当有event出现后会派发actions
 const mapDispatchToProps = (dispatch) => {
   return {
     handleInputFocus() {
-      const action = {
-        type: 'search_focus'
-      }
-      dispatch(action);
+      dispactch(actionCreators.searchFocus());
     },
     handleInputBlur() {
-      const action = {
-        type: 'search_blur'
-      }
+      dispactch(actionCreators.searchBlur());
     }
   }
 }

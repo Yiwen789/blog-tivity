@@ -1,17 +1,8 @@
-const defualtState = {
-    focused: false,
-};
+import { combineReducers } from 'redux-immutable';
+import { reducer as headerRuducer } from '../common/header/store';
 
-export default (state = defualtState, action) => {
-    if (action.type === 'search_focused') {
-        return {
-            focused: true
-        }
-    }
-    if (action.type === 'search_blur') {
-        return {
-            focused: false
-        }
-    }
-    return state;
-}
+const reducer = combineReducers({
+    header: headerRuducer
+});
+
+export default reducer;

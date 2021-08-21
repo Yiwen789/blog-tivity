@@ -103,6 +103,16 @@ export const SearchWrapper = styled.div`
   }
 `
 
+export const SearchInfo = styled.div`
+  position: absolute;
+  left: 0;
+  top: 56px;
+  width: 240px;
+  padding: 0 20px;
+  height: 100px;
+  background: green;
+`
+
 export const Addition = styled.div`
   position: absolute;
   right: 0;
