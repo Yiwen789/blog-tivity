@@ -18,44 +18,50 @@ import {
   Button
 } from './style';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faCompass } from '@fortawesome/free-regular-svg-icons';
+import { faAtom } from '@fortawesome/free-solid-svg-icons';
+import { faPen } from '@fortawesome/free-solid-svg-icons';
+
 
 class Header extends Component {
   getListArea() {
-    const { focused, list, page, totalPage, mouseIn, handleMouseEnter, handleMouseLeave } = this.props;
+    const { focused, list, page, totalPage, mouseIn, handleMouseEnter, handleMouseLeave, handleChangePage } = this.props;
     const jsList = list.toJS();
     const pageList = [];
 
     if (jsList.length) {
-      for (let i = page * 10; i < page * 10; i++) {
+      for (let i = (page - 1) * 10; i < page * 10; i++) {
         pageList.push(
-          <SearchInfoItem key={item}>{jsList[i]}</SearchInfoItem>
+          <SearchInfoItem key={jsList[i]}>{jsList[i]}</SearchInfoItem>
         )
       }
     }
 
     if (focused || mouseIn) {
-      <SearchInfo
-        onMouseEnter={handleMouseEnter}
-        oonMouseLeave={handleMouseLeave}
-      >
-        <SearchInfoTitle>
-          Trending
-          <SearchInfoSwitch onClick={() => handleChangePage(page, totalPage, this.spinIcon)}>
-            <FontAwesomeIcon ref={(icon) => { this.spinIncon = icon }} icon={faTimes} className='iconfont spin' />
-            Swtich
-          </SearchInfoSwitch>
-        </SearchInfoTitle>
-        <SearchInfoList>
-          {pageList}
-        </SearchInfoList>
-      </SearchInfo>
+      return (
+        <SearchInfo
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <SearchInfoTitle>
+            Trending
+            <SearchInfoSwitch onClick={() => handleChangePage(page, totalPage, this.spinIcon)}>
+              <FontAwesomeIcon forwardedRef={(icon) => { this.spinIcon = icon }} icon={faAtom} className='iconfont icon spin' />
+              Switch
+            </SearchInfoSwitch>
+          </SearchInfoTitle>
+          <SearchInfoList>
+            {pageList}
+          </SearchInfoList>
+        </SearchInfo>
+      )
+
     } else {
       return null;
     }
   }
   render() {
-    const { focused, handleInputFocus, handleInputBlur, handleMouseEnter } = this.props;
+    const { focused, list, handleInputFocus, handleInputBlur } = this.props;
     return (
       <HeaderWrapper>
         <Logo />
@@ -72,16 +78,16 @@ class Header extends Component {
             >
               <NavSearch
                 className={focused ? 'focused' : ''}
-                onFocus={handleInputFocus}
+                onFocus={() => handleInputFocus(list)}
                 onBlur={handleInputBlur}></NavSearch>
             </CSSTransition>
-            <FontAwesomeIcon icon={faTimes} className={focused ? 'focused iconfont zoom' : 'iconfont zoom'} />
+            <FontAwesomeIcon icon={faCompass} className={focused ? 'focused iconfont zoom' : 'iconfont zoom'} />
             {this.getListArea(focused)}
           </SearchWrapper>
         </Nav>
         <Addition>
           <Button className='writing'>
-            <FontAwesomeIcon icon={faTimes} className='iconfont' />
+            <FontAwesomeIcon icon={faPen} className='iconfont' />
             Write Blog
           </Button>
           <Button className='reg'>注册</Button>
@@ -105,30 +111,31 @@ const mapStateToProps = (state) => {
 //当有event出现后会派发actions
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleInputFocus() {
-      diapatch(actionCreators.getList());
-      dispactch(actionCreators.searchFocus());
+    handleInputFocus(list) {
+      if (list.size === 0) {
+        dispatch(actionCreators.getList());
+      }
+      dispatch(actionCreators.searchFocus());
     },
     handleInputBlur() {
-      dispactch(actionCreators.searchBlur());
+      dispatch(actionCreators.searchBlur());
     },
     handleMouseEnter() {
-      diapatch(actionCreators.mouseEnter());
+      dispatch(actionCreators.mouseEnter());
     },
     handleMouseLeave() {
       dispatch(actionCreators.mouseLeave());
     },
-    handleChangePage() {
-      dispatch(actionCreators.changePage());
-    },
     handleChangePage(page, totalPage, spin) {
-      let originAngle = spin.style.transform.replace(/[^0--9]/ig, ''); //非数字都替换为空
+      // spin.style.transform = 'rotate(360deg)';
+      let originAngle = spin.style.transform.replace(/[^0-9]/ig, ''); //非数字都替换为空
+      // console.log(originAngle);
       if (originAngle) {
-        originAngle: parseInt(originAngle, 10);
+        originAngle = parseInt(originAngle, 10);
       } else {
         originAngle = 0;
       }
-      spin.style.transform = 'rotate(' + originAngle + '360)';
+      spin.style.transform = 'rotate(' + (originAngle + 360) + 'deg)';
 
       if (page < totalPage) {
         dispatch(actionCreators.changePage(page + 1));
@@ -140,4 +147,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDisPatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

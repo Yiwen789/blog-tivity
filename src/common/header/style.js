@@ -90,16 +90,24 @@ export const SearchWrapper = styled.div`
   .zoom {
     position: absolute;
     right: 5px;
-    bottom: 5px;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    border-radius: 15px;
+    bottom: 9px;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    border-radius: 11px;
     text-align: center;
     &.focused {
       background: #777;
       color: $fff;
     }
+  }
+  .icon{
+    position: relative;
+    height: 13px;
+    line-height: 13px;
+    margin-top: 2px;
+    margin-right: 4px;
+    text-align: center;
   }
 `
 
@@ -109,7 +117,7 @@ export const SearchInfo = styled.div`
   top: 56px;
   width: 240px;
   padding: 0 20px;
-  box-shadow: 0 0 8px rbga(0, 0, 0, .2);
+  box-shadow: 0px 0px 10px #666;
 `;
 
 export const SearchInfoTitle = styled.div`
@@ -118,12 +126,12 @@ export const SearchInfoTitle = styled.div`
   line-height: 20px;
   font-size: 14px;
   color: #969696;
-
 `;
 
-export const SearchInfoSwitch = styled.div`
+export const SearchInfoSwitch = styled.span`
   float: right;
   font-size: 13px;
+  cursor: pointer;
   .spin {
     display: block;
     float: left;
@@ -133,24 +141,24 @@ export const SearchInfoSwitch = styled.div`
     transform: rotate(0deg);
     transorm-origin: center center;
   }
-`
+`;
 
-export const SearchInfoItem = styled.div`
+export const SearchInfoList = styled.div`
   overflow: hidden;
-`
+`;
 
-export const SearchInfoItem = styled.div`
+export const SearchInfoItem = styled.a`
   display: block;
   float: left;
   line-height: 20px;
   padding: 0 5px;
   margin-right: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-size: 12px;
   border: 1px solid #ddd;
   color: #787878;
   border-radius: 2px;
-`
+`;
 
 export const Addition = styled.div`
   position: absolute;
@@ -174,4 +182,4 @@ export const Button = styled.div`
     color: #fff;
     background: #ec6149
   }
-`
+`;

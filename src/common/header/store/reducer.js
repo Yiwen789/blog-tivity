@@ -5,7 +5,7 @@ const defualtState = fromJS({
     focused: false,
     mouseIn: false,
     list: [],
-    page: 0,
+    page: 1,
     totalPage: 1
 });
 
