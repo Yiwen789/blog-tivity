@@ -127,9 +127,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(actionCreators.mouseLeave());
     },
     handleChangePage(page, totalPage, spin) {
-      // spin.style.transform = 'rotate(360deg)';
       let originAngle = spin.style.transform.replace(/[^0-9]/ig, ''); //非数字都替换为空
-      // console.log(originAngle);
       if (originAngle) {
         originAngle = parseInt(originAngle, 10);
       } else {
@@ -142,7 +140,6 @@ const mapDispatchToProps = (dispatch) => {
       } else {
         dispatch(actionCreators.changePage(1));
       }
-      console.log(page, totalPage);
     }
   }
 }
