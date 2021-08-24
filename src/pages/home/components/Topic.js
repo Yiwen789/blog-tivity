@@ -1,37 +1,32 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { TopicWrapper, TopicItem } from '../style';
 
 class Topic extends Component {
   render() {
+    const { list } = this.props;
     return (
       <TopicWrapper>
-        <TopicItem>
-          <img
-            className='topic-pic'
-            src='https://source.unsplash.com/random/32x32' />
-          News
-        </TopicItem>
-        <TopicItem>
-          <img
-            className='topic-pic'
-            src='https://source.unsplash.com/random/32x32' />
-          News
-        </TopicItem>
-        <TopicItem>
-          <img
-            className='topic-pic'
-            src='https://source.unsplash.com/random/32x32' />
-          News
-        </TopicItem>
-        <TopicItem>
-          <img
-            className='topic-pic'
-            src='https://source.unsplash.com/random/32x32' />
-          News
-        </TopicItem>
+        {
+          list.map((item) => {
+            return (
+              <TopicItem key={item.get('id')}>
+                <img
+                  className='topic-pic'
+                  src={item.get('imgUrl')} />
+                {item.get('title')}
+              </TopicItem>
+            )
+          })
+        }
+
       </TopicWrapper>
     );
   }
 }
 
-export default Topic;
+const mapStateToProps = (state) => ({
+  list: state.get('home').get('topicList')
+});
+
+export default connect(mapStateToProps, null)(Topic);
