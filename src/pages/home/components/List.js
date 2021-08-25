@@ -24,7 +24,7 @@ class List extends Component {
             )
           })
         }
-        <LoadMore onClick={() => getMoreList}>Show More</LoadMore>
+        <LoadMore onClick={() => getMoreList(page)}>Show More</LoadMore>
       </div>
     );
   }
@@ -37,7 +37,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatch = (dispatch) => ({
   getMoreList(page) {
-    dispatch(actionCreators.getMoreList())
+    dispatch(actionCreators.getMoreList(page))
   }
 })
 

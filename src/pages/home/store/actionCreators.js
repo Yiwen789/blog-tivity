@@ -7,12 +7,13 @@ const changeHomeData = (result) => ({
   topicList: result.topicList,
   articleList: result.articleList,
   recommendList: result.recommendList,
-  writerList: result.writerList,
+  writerList: result.writerList, 
 })
 
-const addHomeList = (list) => ({
+const addHomeList = (list, nextPage) => ({
   type: constants.ADD_ARTICLE_LIST,
-  list: fromJS(list) 
+  list: fromJS(list),
+  nextPage: nextPage
 }) 
 
 export const getHomeInfo = () => {
@@ -25,9 +26,10 @@ export const getHomeInfo = () => {
   }
 }
 
-export const getMoreList = () => {
+export const getMoreList = (page) => {
   return (dispatch) => {
     axios.get('/api/homeList.json?page=' + page).then((res) => {
+      console.log(res.data.data);
       const result = res.data.data;
       dispatch(addHomeList(result, page + 1));
     })

@@ -5,6 +5,7 @@ import List from './components/List';
 import Recommend from './components/Recommend';
 import Writer from './components/Writer';
 import { actionCreators } from './store';
+import { BackTop } from './style';
 
 import {
   HomeWrapper,
@@ -27,6 +28,8 @@ class Home extends Component {
           <Recommend />
           <Writer />
         </HomeRight>
+
+        <BackTop>回到顶部</BackTop>
       </HomeWrapper>
     )
   }
