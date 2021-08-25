@@ -18,7 +18,7 @@ export const HomeLeft = styled.div`
 `;
 
 export const HomeRight = styled.div`
-    width: 240px;
+    width: 280px;
     float: right;
 `;
 
@@ -78,3 +78,91 @@ export const ListInfo = styled.div`
       color: #999;
     }
 `;
+
+export const RecommendWrapper = styled.div`
+    margin: 30px 0;
+    width: 280px;
+
+`;
+
+export const RecommendItem = styled.div`
+    width: 280px;
+    height: 50px;
+    background: url(${(props) => props.imgUrl});
+    background-size: contain;
+`;
+
+export const WriterWrapper = styled.div`
+    width: 278px;
+    // border: 1px solid #dcdcdc;
+    // border-radius: 3px;
+    height: 300px;
+    // text-align: center; 
+`;
+
+export const WriterBar = styled.div`
+    padding: 15px 0 15px 0;
+    width: 278px;
+    height: 18px;
+    float: left;
+    font-size: 14px;
+    color: #999;
+    .left-text {
+      float: left;
+    };
+    .right-text {
+      float: right;
+    }
+`;
+
+export const WriterItem = styled.div`
+    overflow: hidden;
+    margin: 15px 0 15px 0;
+    // margin-top: 15px;
+    width: 278px;
+    height: 50px;
+    font-size: 12px;
+    .profile-pic {
+      display: block;
+      float: left;
+      border-radius: 24px;
+      margin-right: 10px;
+      cursor: pointer;
+    };
+    .follow {
+      float: right;
+      margin-top: 5px;
+      font-size: 13px;
+      color: #42c02e;
+      cursor: pointer;
+    }
+`;
+
+export const WriterInfo = styled.div`
+    margin-top: 0;
+    float: left;
+    .name {
+      line-height: 20px;
+      font-size: 14px;
+      color: #333;
+      cursor: pointer;
+    };
+    .description {
+      line-height: 20px;
+      font-size: 12px;
+      color: #969696;
+      margin-bottom: 5px;
+    };
+`;
+
+export const LoadMore = styled.div`
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin: 30px 0;
+    background: #a5a5a5;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+
+`

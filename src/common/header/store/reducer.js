@@ -1,6 +1,7 @@
 import * as constants from './constants';
 import { fromJS } from 'immutable'; //js对象转化为immutable对象
 
+
 const defualtState = fromJS({
     focused: false,
     mouseIn: false,

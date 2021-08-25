@@ -118,6 +118,8 @@ export const SearchInfo = styled.div`
   width: 240px;
   padding: 0 20px;
   box-shadow: 0px 0px 10px #666;
+  border-radius: 4px;
+  background: #fff;
 `;
 
 export const SearchInfoTitle = styled.div`
