@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { WriterWrapper, WriterBar, WriterItem, WriterInfo } from '../style';
 import { connect } from 'react-redux';
 
@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAtom } from '@fortawesome/free-solid-svg-icons';
 
 
-class Writer extends Component {
+class Writer extends PureComponent {
   render() {
     const { list } = this.props;
     return (

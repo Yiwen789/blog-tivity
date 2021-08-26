@@ -29,10 +29,13 @@ export const getHomeInfo = () => {
 export const getMoreList = (page) => {
   return (dispatch) => {
     axios.get('/api/homeList.json?page=' + page).then((res) => {
-      console.log(res.data.data);
       const result = res.data.data;
       dispatch(addHomeList(result, page + 1));
     })
   }
 }
 
+export const toggleScroll = (show) => ({
+  type: constants.TOGGLE_SCROLL,
+  show
+})
