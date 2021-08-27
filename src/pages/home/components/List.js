@@ -8,11 +8,11 @@ class List extends PureComponent {
   render() {
     const { list, getMoreList, page } = this.props;
     return (
-      <div>
+      <div> 
         {
           list.map((item, index) => {
             return (
-              <Link key={index} to='/detail'>
+              <Link key={index} to={'/detail/' + item.get('id')}>
                 <ListItem key={index}>
                   <img
                     alt=''
