@@ -1,0 +1,21 @@
+{
+  "success": true,
+  "data": [{
+      "id": 1,
+      "title": "I am a title",
+      "description": "I am the description",
+      "imgUrl": "https://source.unsplash.com/random/150x100"
+    },
+    {
+      "id": 2,
+      "title": "I am a title",
+      "description": "I am the description",
+      "imgUrl": "https://source.unsplash.com/random/150x100"
+    },
+    {
+      "id": 3,
+      "title": "I am a title",
+      "description": "I am the description",
+      "imgUrl": "https://source.unsplash.com/random/150x100"
+    }]
+}
