@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/blog-tivity/static/js/main.132720c8.chunk.js",
-    "main.js.map": "/blog-tivity/static/js/main.132720c8.chunk.js.map",
+    "main.js": "/blog-tivity/static/js/main.75159e75.chunk.js",
+    "main.js.map": "/blog-tivity/static/js/main.75159e75.chunk.js.map",
     "runtime-main.js": "/blog-tivity/static/js/runtime-main.b9aaffd7.js",
     "runtime-main.js.map": "/blog-tivity/static/js/runtime-main.b9aaffd7.js.map",
     "static/js/2.6b719b3a.chunk.js": "/blog-tivity/static/js/2.6b719b3a.chunk.js",
@@ -14,6 +14,6 @@
   "entrypoints": [
     "static/js/runtime-main.b9aaffd7.js",
     "static/js/2.6b719b3a.chunk.js",
-    "static/js/main.132720c8.chunk.js"
+    "static/js/main.75159e75.chunk.js"
   ]
 }
