@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from './common/header';
 import Home from './pages/home';
 import Detail from './pages/detail/loadable';
@@ -9,26 +9,30 @@ import Write from './pages/write';
 import store from './store';
 
 
+
 import GlobalStyle from './globalStyle';
 
 
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
+        <Provider store={store}>
         <div>
           <GlobalStyle />
-          <BrowserRouter>
+          <BrowserRouter basename="/blog-tivity">
             <div>
               <Header />
-              <Route path="/" exact component={Home}></Route>
-              <Route path="/detail/:id" exact component={Detail}></Route>
-              <Route path="/write" exact component={Write}></Route>
-              <Route path="/login" exact component={Login}></Route>
+              <Switch>
+                <Route path="/" exact component={Home}></Route>
+                <Route path="/detail/:id" exact component={Detail}></Route>
+                <Route path="/write" exact component={Write}></Route>
+                <Route path="/login" exact component={Login}></Route>
+              </Switch>
             </div>
           </BrowserRouter>
         </div>
       </Provider> 
+      
 
     )
   }
