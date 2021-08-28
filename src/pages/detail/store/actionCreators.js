@@ -9,11 +9,11 @@ const changeDetail = (title, content) => ({
 
 export const getDetail = () => {
   return (dispatch) => {
-    axios.get('/api/detail.json').then((res) => {
+    axios.get('/blog-tivity/api/detail.json').then((res) => {
       const result = res.data.data;
       dispatch(changeDetail(result.title, result.content));
     }).catch(() => {
-      alert("Loading Failed"); 
+      alert("Loading Failed");
     })
   }
 }

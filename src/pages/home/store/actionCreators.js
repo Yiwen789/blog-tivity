@@ -18,7 +18,7 @@ const addHomeList = (list, nextPage) => ({
 
 export const getHomeInfo = () => {
   return (dispatch) => {
-    axios.get('/api/home.json').then((res) => {
+    axios.get('/blog-tivity/api/home.json').then((res) => {
       const result = res.data.data;
       
       dispatch(changeHomeData(result));
@@ -28,12 +28,14 @@ export const getHomeInfo = () => {
 
 export const getMoreList = (page) => {
   return (dispatch) => {
-    axios.get('/api/homeList.json?page=' + page).then((res) => {
+    console.log('click');
+    axios.get('/blog-tivity/api/homeList.json?page=' + page).then((res) => {
       const result = res.data.data;
+      console.log(result);
       dispatch(addHomeList(result, page + 1));
     })
   }
-}
+} 
 
 export const toggleScroll = (show) => ({
   type: constants.TOGGLE_SCROLL,

@@ -80,66 +80,6 @@
       "name": "Absolute Goldfish",
       "imgUrl": "https://source.unsplash.com/random/48x48",
       "description": "Personal Description"
-    },
-    {
-      "id": 7,
-      "name": "Open Bookworm",
-      "imgUrl": "https://source.unsplash.com/random/48x48",
-      "description": "Personal Description"
-    },
-    {
-      "id": 8,
-      "name": "Logitude Kiwi",
-      "imgUrl": "https://source.unsplash.com/random/48x48",
-      "description": "Personal Description"
-    },
-    {
-      "id": 9,
-      "name": "Co Co",
-      "imgUrl": "https://source.unsplash.com/random/48x48",
-      "description": "Personal Description"
-    }, 
-    {
-      "id": 10,
-      "name": "Loving Animals",
-      "imgUrl": "https://source.unsplash.com/random/48x48",
-      "description": "Personal Description"
-    },
-    {
-      "id": 11,
-      "name": "Daily News",
-      "imgUrl": "https://source.unsplash.com/random/48x48",
-      "description": "Personal Description"
-    },
-    {
-      "id": 12,
-      "name": "Tech Updates",
-      "imgUrl": "https://source.unsplash.com/random/48x48",
-      "description": "Personal Description"
-    }, 
-    {
-      "id": 13,
-      "name": "Gone with the Wind",
-      "imgUrl": "https://source.unsplash.com/random/48x48",
-      "description": "Personal Description"
-    }, 
-    {
-      "id": 14,
-      "name": "Part-time Sappy",
-      "imgUrl": "https://source.unsplash.com/random/48x48",
-      "description": "Personal Description"
-    },
-    {
-      "id": 15,
-      "name": "Arts and Craft",
-      "imgUrl": "https://source.unsplash.com/random/48x48",
-      "description": "Personal Description"
-    },
-    {
-      "id": 16,
-      "name": "Recipes Daily",
-      "imgUrl": "https://source.unsplash.com/random/48x48",
-      "description": "Personal Description"
     }]
   }
 }

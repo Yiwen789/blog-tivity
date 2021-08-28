@@ -3,10 +3,12 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from './common/header';
 import Home from './pages/home';
-import Detail from './pages/detail/loadable';
+import Detail from './pages/detail/loadable.js';
 import Login from './pages/login';
 import Write from './pages/write';
+import Construction from './pages/construction';
 import store from './store';
+
 
 
 
@@ -27,6 +29,7 @@ class App extends Component {
                 <Route path="/detail/:id" exact component={Detail}></Route>
                 <Route path="/write" exact component={Write}></Route>
                 <Route path="/login" exact component={Login}></Route>
+                <Route path="/construction" exact component={Construction}></Route>
               </Switch>
             </div>
           </BrowserRouter>

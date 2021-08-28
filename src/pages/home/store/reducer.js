@@ -32,7 +32,7 @@ export default (state = defualtState, action) => {
     case constants.CHANGE_HOME_DATA:
       return changeHomeData(state, action)
     case constants.ADD_ARTICLE_LIST:
-      addArticleList(state, action);
+      return addArticleList(state, action);
     case constants.TOGGLE_SCROLL:
       return state.set('showScroll', action.show);
      default:

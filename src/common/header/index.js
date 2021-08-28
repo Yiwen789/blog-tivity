@@ -70,8 +70,13 @@ class Header extends Component {
           <Logo />
         </Link>
         <Nav>
-          <NavItem className='left active'>首页</NavItem>
-          <NavItem className='left '>下载App</NavItem>
+          <Link to='/'>
+            <NavItem className='left active'>首页</NavItem>
+          </Link>
+          <Link to='/construction'>
+            <NavItem className='left '>下载App</NavItem>
+          </Link>
+          
           {
             login ? 
             <NavItem onClick={logout} className='right'>Log Out</NavItem>:
@@ -100,7 +105,7 @@ class Header extends Component {
           <Link to='/write'>
             <Button className='writing'>
               <FontAwesomeIcon icon={faPen} className='iconfont' />
-              Write Blog
+               Write Blog
             </Button>
           </Link>
           <Button className='reg'>注册</Button>
