@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/blog-tivity/static/js/main.d7813dc8.chunk.js",
-    "main.js.map": "/blog-tivity/static/js/main.d7813dc8.chunk.js.map",
-    "runtime-main.js": "/blog-tivity/static/js/runtime-main.2ee97073.js",
-    "runtime-main.js.map": "/blog-tivity/static/js/runtime-main.2ee97073.js.map",
-    "static/js/2.cd45cc34.chunk.js": "/blog-tivity/static/js/2.cd45cc34.chunk.js",
-    "static/js/2.cd45cc34.chunk.js.map": "/blog-tivity/static/js/2.cd45cc34.chunk.js.map",
-    "static/js/3.07097774.chunk.js": "/blog-tivity/static/js/3.07097774.chunk.js",
-    "static/js/3.07097774.chunk.js.map": "/blog-tivity/static/js/3.07097774.chunk.js.map",
+    "main.js": "/blog-tivity/static/js/main.a8beed74.chunk.js",
+    "main.js.map": "/blog-tivity/static/js/main.a8beed74.chunk.js.map",
+    "runtime-main.js": "/blog-tivity/static/js/runtime-main.b9aaffd7.js",
+    "runtime-main.js.map": "/blog-tivity/static/js/runtime-main.b9aaffd7.js.map",
+    "static/js/2.6b719b3a.chunk.js": "/blog-tivity/static/js/2.6b719b3a.chunk.js",
+    "static/js/2.6b719b3a.chunk.js.map": "/blog-tivity/static/js/2.6b719b3a.chunk.js.map",
+    "static/js/3.2e6cbf19.chunk.js": "/blog-tivity/static/js/3.2e6cbf19.chunk.js",
+    "static/js/3.2e6cbf19.chunk.js.map": "/blog-tivity/static/js/3.2e6cbf19.chunk.js.map",
     "index.html": "/blog-tivity/index.html",
-    "static/js/2.cd45cc34.chunk.js.LICENSE.txt": "/blog-tivity/static/js/2.cd45cc34.chunk.js.LICENSE.txt"
+    "static/js/2.6b719b3a.chunk.js.LICENSE.txt": "/blog-tivity/static/js/2.6b719b3a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.2ee97073.js",
-    "static/js/2.cd45cc34.chunk.js",
-    "static/js/main.d7813dc8.chunk.js"
+    "static/js/runtime-main.b9aaffd7.js",
+    "static/js/2.6b719b3a.chunk.js",
+    "static/js/main.a8beed74.chunk.js"
   ]
 }
