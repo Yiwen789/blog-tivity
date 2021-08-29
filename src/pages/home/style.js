@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const HomeWrapper = styled.div`
     overflow: hidden;
     width: 960px;
@@ -87,9 +88,10 @@ export const RecommendWrapper = styled.div`
 
 export const RecommendItem = styled.div`
     width: 280px;
-    height: 50px;
+    height: 90px;
     background: url(${(props) => props.imgUrl});
-    background-size: contain;
+    background-size: cover;
+    margin: 10px;
 `;
 
 export const WriterWrapper = styled.div`
@@ -113,6 +115,9 @@ export const WriterBar = styled.div`
     .right-text {
       float: right;
     }
+    .iconfont {
+      margin-right: 5px;
+    }
 `;
 
 export const WriterItem = styled.div`
@@ -133,7 +138,7 @@ export const WriterItem = styled.div`
       float: right;
       margin-top: 5px;
       font-size: 13px;
-      color: #42c02e;
+      color: #1fad8c;
       cursor: pointer;
     }
 `;
@@ -160,10 +165,11 @@ export const LoadMore = styled.div`
     height: 40px;
     line-height: 40px;
     margin: 30px 0;
-    background: #a5a5a5;
+    background: #f0c987;
     text-align: center;
     border-radius: 20px;
     cursor: pointer;
+    box-shadow: 2px 1px 3px #c87c56;
 
 `;
 
@@ -175,6 +181,9 @@ export const BackTop = styled.div`
     height: 60px;
     line-height: 60px;
     text-align: center;
-    border: 1px solid #ccc;
+    border: 1px solid #efd9ce;
+    border-radius: 20px;
+    box-shadow: 12px 12px 2px 0.5px #efd9ce;
     font-size: 14px;
+    background: #eee;
 `;

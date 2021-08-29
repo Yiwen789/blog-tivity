@@ -1,25 +1,26 @@
 import styled from 'styled-components';
-import logoPic from '../../static/logo.png';
+import logoPic from '../../static/logo_header.png';
 
 export const HeaderWrapper = styled.div`
   z-index: 1;
   position: relative;
   height: 58px;
-  border-bottom: 1px solid #f0f0f0;
+  border-top: 2px solid #2e190f;
+  border-bottom: 2px solid #2e190f;
+  background: #efd9ce;
 `;
 
 export const Logo = styled.div`
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 10px;
+  left: 120px;
   display: block;
   width: 100px;
   height: 56px;
-  border-bottom: 1px solid #f0f0f0;
   background: url(${logoPic});
   background-size: contain;
   background-repeat: no-repeat;
-
+  transform: scale(2.5);
 `;
 
 export const Nav = styled.div`
@@ -43,12 +44,12 @@ color: #333;
   color: #969696;
 }
 &.active {
-  color: #ea6f5a;
+  color: #C87C56;
 }
 `;
 
 export const NavSearch = styled.input.attrs({
-  placeholder: '搜索'
+  placeholder: 'Search'
 })`
   width: 160px;
   height: 38px;
@@ -58,10 +59,11 @@ export const NavSearch = styled.input.attrs({
   box-sizing: border-box;
   border: none;
   outline: none;
+  box-shadow: 2px 1px 3px #c87c56;
   border-radius: 19px;
-  background: #eee;
+  background: #faf3f0;
   font-size: 14px;
-  color: #666;
+  color: #faf3f0;
   &.slide-enter {
     width: 160px;
     transition: all .2s ease-out;
@@ -174,13 +176,16 @@ export const Button = styled.div`
   padding: 0 20px;
   line-height: 38px;
   border-radius: 19px;
-  border: 1px solid #ec6149;
-  font-size: 14px;
+  border: 1px solid #C87C56;
+  font-size: 16px;
   &.reg {
-    color: #ec6149;
+    color: #C87C56;
   }
   &.writing {
     color: #fff;
-    background: #ec6149
+    background: #C87C56
+  }
+  .iconfont{
+    margin-right: 5px;
   }
 `;

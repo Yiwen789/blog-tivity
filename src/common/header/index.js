@@ -71,10 +71,10 @@ class Header extends Component {
         </Link>
         <Nav>
           <Link to='/'>
-            <NavItem className='left active'>首页</NavItem>
+            <NavItem className='left active'>Home</NavItem>
           </Link>
           <Link to='/construction'>
-            <NavItem className='left '>下载App</NavItem>
+            <NavItem className='left '>Download App</NavItem>
           </Link>
           
           {
@@ -108,7 +108,7 @@ class Header extends Component {
                Write Blog
             </Button>
           </Link>
-          <Button className='reg'>注册</Button>
+          <Button className='reg'>Register</Button>
         </Addition>
       </HeaderWrapper>
     );
