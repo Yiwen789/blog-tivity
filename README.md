@@ -1,4 +1,4 @@
-## Blog-tivity 
+## Blog-tivity (Still writing the README.md)
 
 An application used for users to write and view blogs and interesting ideas, built with React, Redux, JavaScript, and CSS.
 
