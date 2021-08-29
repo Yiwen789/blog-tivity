@@ -14,7 +14,8 @@ export const HomeLeft = styled.div`
     width: 625px;
     .banner-img {
       width: 625px;
-      height: 270px;
+      height: 300px;
+      background-size: contain;
     }
 `;
 

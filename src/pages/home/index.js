@@ -24,7 +24,7 @@ class Home extends PureComponent {
       <HomeWrapper>
         <HomeLeft>
           {/* https://source.unsplash.com/ */}
-          <img alt='' className='banner-img' src="https://source.unsplash.com/random/625x270" />
+          <img alt='' className='banner-img' src="https://source.unsplash.com/random/625x300" />
           <Topic />
           <List />
 
